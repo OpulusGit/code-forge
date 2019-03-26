@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+    ide:
+        build: ./ide
+        restart: always
+        volumes:
+            - ./sources:/root/project
+        ports:
+            - 8443:8443
