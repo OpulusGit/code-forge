@@ -30,3 +30,6 @@ sources
 
 # Docker volumes
 gitlab/data
+portainer/data
+sonarqube/data
+ide/data
