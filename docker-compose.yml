@@ -8,6 +8,8 @@ services:
             - ./sources:/root/project
         ports:
             - 8443:8443
+        depends_on:
+            - gitlab
 
     gitlab:
         build: ./gitlab
@@ -29,3 +31,18 @@ services:
         environment:
             - SONARQUBE_JDBC_USERNAME=changeme
             - SONARQUBE_JDBC_PASSWORD=changeme
+        depends_on:
+            - gitlab
+
+    portainer:
+      build: ./portainer
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./portainer/data:/data
+      ports:
+        - 9500:9000
+      command: --admin-password $$2y$$05$$xpzJzEzLAxRX1m/6bvmIi.sEM8iE.sKUAimHG7b9B4pDjUkeB.QDG
+      depends_on:
+        - ide
+        - gitlab
+        - sonarqube
