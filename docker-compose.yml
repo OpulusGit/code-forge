@@ -20,3 +20,14 @@ services:
             - ./gitlab/data/config:/etc/gitlab
             - ./gitlab/data/logs:/var/log/gitlab
             - ./gitlab/data/data:/var/opt/gitlab
+
+    sonarqube:
+        build: ./sonarqube
+        restart: always
+        ports:
+            - 9000:9000
+        environment:
+            - SONARQUBE_JDBC_USERNAME=changeme
+            - SONARQUBE_JDBC_PASSWORD=changeme
+        volumes:
+            - ./sources:/home/sources
