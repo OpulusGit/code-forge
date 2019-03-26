@@ -1,4 +1,4 @@
-# A continuous integreation project #
+# A continuous integration project #
 
 ```css
 _________            .___       ___________                         
