@@ -29,5 +29,3 @@ services:
         environment:
             - SONARQUBE_JDBC_USERNAME=changeme
             - SONARQUBE_JDBC_PASSWORD=changeme
-        volumes:
-            - ./sources:/home/sources
