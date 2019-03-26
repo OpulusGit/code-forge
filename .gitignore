@@ -27,3 +27,6 @@ hs_err_pid*
 
 # Source files
 sources
+
+# Docker volumes
+gitlab/data
