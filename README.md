@@ -86,3 +86,10 @@ $ze1$evzz$zezcz -> $$ze1$$evzz$$zezcz
 
 To connect to the Portainer interface, just go on :
 [http://localhost:9500](http://localhost:9500)
+
+### Docker Registry ###
+
+![alt-text](./pictures/docker.png "Registry")
+
+The docker registry is accessible at :
+[http://localhost:8443](https://localhost:8443)
