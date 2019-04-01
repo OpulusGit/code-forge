@@ -53,3 +53,9 @@ services:
         restart: always
         ports:
             - 8081:8081
+
+    registry:
+        build: ./registry
+        restart: always
+        ports:
+            - 5500:5000

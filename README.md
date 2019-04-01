@@ -93,3 +93,10 @@ To connect to the Portainer interface, just go on :
 
 The nexus repository allows you to have local dependencies required by the application.<br/>
 The Nexus service is available on port 8081.
+
+### Docker Registry ###
+
+![alt-text](./pictures/docker.png "Registry")
+
+The docker registry is accessible at :
+[http://localhost:5500](https://localhost:5500)
