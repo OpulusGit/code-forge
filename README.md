@@ -86,3 +86,11 @@ $ze1$evzz$zezcz -> $$ze1$$evzz$$zezcz
 
 To connect to the Portainer interface, just go on :
 [http://localhost:9500](http://localhost:9500)
+
+### Nexus ###
+
+![alt-text](./pictures/sonartype.png "Nexus")
+
+The nexus repository allows you to have local dependencies required by the application.<br/>
+Then, to get the Nexus administrator interface, just to go on :
+[http://localhost:8081](https://localhost:8081)
