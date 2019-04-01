@@ -92,4 +92,4 @@ To connect to the Portainer interface, just go on :
 ![alt-text](./pictures/docker.png "Registry")
 
 The docker registry is accessible at :
-[http://localhost:8443](https://localhost:8443)
+[http://localhost:5500](https://localhost:5500)
