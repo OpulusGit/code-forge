@@ -59,3 +59,12 @@ services:
         restart: always
         ports:
             - 5500:5000
+
+    jenkins:
+        build: ./jenkins
+        restart: always
+        ports:
+            - 8080:8080
+            - 50000:50000
+        volumes:
+            - ./jenkins/data/jenkins_home:/var/jenkins_home

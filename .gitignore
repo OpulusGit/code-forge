@@ -33,3 +33,4 @@ gitlab/data
 portainer/data
 sonarqube/data
 ide/data
+jenkins/data
