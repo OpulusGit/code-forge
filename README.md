@@ -92,11 +92,33 @@ To connect to the Portainer interface, just go on :
 ![alt-text](./pictures/sonartype.png "Nexus")
 
 The nexus repository allows you to have local dependencies required by the application.<br/>
-The Nexus service is available on port 8081.
+The Nexus service is available at : [http://localhost:3333](http://localhost:8081)
 
 ### Docker Registry ###
 
 ![alt-text](./pictures/docker.png "Registry")
 
-The docker registry is accessible at :
-[http://localhost:5500](https://localhost:5500)
+The docker registry service is located on port 5000
+
+### Sonarqube ###
+
+![alt-text](./pictures/sonarqube.png "Sonarqube")
+
+Sonarqube is a technology that uses great parsing tools to
+detect many types of code leaks, error or else.<br/>
+<br/>
+It can be used to verify a code more than a classical compiler.<br/>
+<br/>
+The Sonarqube service is accessible on :
+ [http://localhost:9000](http://localhost:9000)
+
+### Jenkins ###
+
+![alt-text](./pictures/jenkins.png "Jenkins")
+
+Jenkins is use to make a continuous integration of the project.<br/>
+<br/>
+It can be used to schedule a pipeline with tests, validations and builds.<br/>
+<br/>
+The Jenkins service is accessible on :
+[http://localhost:8080](http://localhost:8080)

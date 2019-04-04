@@ -10,6 +10,12 @@ services:
             - 8443:8443
         depends_on:
             - gitlab
+            - jenkins
+            - sonarqube
+            - nexus
+            - registry
+        networks:
+            - docnet
 
     gitlab:
         build: ./gitlab
@@ -19,9 +25,10 @@ services:
             - 80:80
             - 22:22
         volumes:
-            - ./gitlab/data/config:/etc/gitlab
             - ./gitlab/data/logs:/var/log/gitlab
             - ./gitlab/data/data:/var/opt/gitlab
+        networks:
+            - docnet
 
     sonarqube:
         build: ./sonarqube
@@ -33,32 +40,36 @@ services:
             - SONARQUBE_JDBC_PASSWORD=changeme
         depends_on:
             - gitlab
+        networks:
+            - docnet
 
     portainer:
-      build: ./portainer
-      restart: always
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        - ./portainer/data:/data
-      ports:
-        - 9500:9000
-      command: --admin-password $$2y$$05$$xpzJzEzLAxRX1m/6bvmIi.sEM8iE.sKUAimHG7b9B4pDjUkeB.QDG
-      depends_on:
-        - ide
-        - gitlab
-        - sonarqube
+        build: ./portainer
+        restart: always
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./portainer/data:/data
+        ports:
+          - 9500:9000
+        command: --admin-password $$2y$$05$$xpzJzEzLAxRX1m/6bvmIi.sEM8iE.sKUAimHG7b9B4pDjUkeB.QDG
+        networks:
+            - docnet
 
     nexus:
         build: ./nexus
         restart: always
         ports:
             - 8081:8081
+        networks:
+            - docnet
 
     registry:
         build: ./registry
         restart: always
         ports:
-            - 5500:5000
+            - 5000:5000
+        networks:
+            - docnet
 
     jenkins:
         build: ./jenkins
@@ -66,5 +77,8 @@ services:
         ports:
             - 8080:8080
             - 50000:50000
-        volumes:
-            - ./jenkins/data/jenkins_home:/var/jenkins_home
+        networks:
+            - docnet
+
+networks:
+    docnet:
